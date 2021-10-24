@@ -115,21 +115,19 @@ local function PikaESP(v)
                     Box.Size = Vector2.new(2500 / RootPosition.Z, HeadPosition.Y - LegPosition.Y)
                     Box.Position = Vector2.new(RootPosition.X - Box.Size.X / 2, RootPosition.Y - Box.Size.Y / 2)
                     Box.Visible = true
-                else
-                    BoxOutline.Visible = false
-                    Box.Visible = false
-		end
-		if PikaESPSettings.Health then
-		    HealthBarOutline.Size = Vector2.new(2, HeadPosition.Y - LegPosition.Y)
+		    
+	            HealthBarOutline.Size = Vector2.new(2, HeadPosition.Y - LegPosition.Y)
 		    HealthBarOutline.Position = BoxOutline.Position - Vector2.new(6,0)
 		    HealthBarOutline.Visible = true
 		    
 		    HealthBar.Size = Vector2.new(2, (HeadPosition.Y - LegPosition.Y) / (v.Character.Humanoid.MaxHealth / math.clamp(v.Character.Humanoid.Health, 0,v.Character.Humanoid.MaxHealth)))
 		    HealthBar.Position = Vector2.new(Box.Position.X - 6, Box.Position.Y + (1 / HealthBar.Size.Y))
 		    HealthBar.Color = Color3.fromRGB(255 - 255 / (v.Character.Humanoid.MaxHealth / v.Character.Humanoid.Health), 255 / (v.Character.Humanoid.MaxHealth / v.Character.Humanoid.Health), 0)
-		    HealthBar.Visible = true		
-		else
-		    HealthBarOutline.Visible = false
+		    HealthBar.Visible = true
+                else
+                    BoxOutline.Visible = false
+                    Box.Visible = false
+                    HealthBarOutline.Visible = false
 		    HealthBar.Visible = false
 		end
                 if PikaESPSettings.Tracers then
