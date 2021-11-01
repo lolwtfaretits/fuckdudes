@@ -102,6 +102,12 @@ local function PikaESP(v)
                         AttachChams(v, "Bottom")
                         AttachChams(v, "Right")
                         AttachChams(v, "Left")
+		    else
+		    	for i,v in pairs(v.Character:GetChildren()) do
+                            if v:IsA("MeshPart") or v.Name == "Head" then
+			    	v:Destroy()
+			    end
+		 	end            
                     end
                 end
             end
