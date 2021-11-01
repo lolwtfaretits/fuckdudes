@@ -101,7 +101,7 @@ local function PikaESP(v)
                         AttachChams(v, "Top")
                         AttachChams(v, "Bottom")
                         AttachChams(v, "Right")
-                        AttachChams(v, "Left")      
+                        AttachChams(v, "Left")
                     end
                 end
             end
